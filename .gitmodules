@@ -1,0 +1,3 @@
+[submodule "ampersandjs.com"]
+	path = ampersandjs.com
+	url = https://github.com/AmpersandJS/ampersandjs.com.git

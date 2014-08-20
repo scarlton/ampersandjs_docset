@@ -1,0 +1,44 @@
+doctype
+html(lang="en")
+  head
+    title Ampersand.js
+
+    link(rel="stylesheet", href="normalize.min.css")
+    link(rel="stylesheet", href="main.css")
+
+  body
+
+    .docs.cf
+
+      .docs-content(style= 'padding-left: 0;')
+
+        for module, key in globals.modules
+          section.module
+            a.dashAnchor(name= '//apple_ref/cpp/Module/' + module.name, href= '#' + module.name)
+              h1
+                span.header-link
+                | #{module.title}
+            .module-card
+              h4.module-name= module.name
+              p.module-version= 'latest v' + module['dist-tags'].latest
+              p.module-description= module.description
+              p.module-links
+                a(href= module.homepage) github
+                a(href='https://www.npmjs.org/package/#{module.name}') npm
+
+            div!= module.html
+
+    footer.footer-main
+      nav.nav-footer
+        a.nav-item(href="//ampersandjs.com/learn") Learn
+        a.nav-item(href="//ampersandjs.com/docs") Docs
+        a.nav-item(href="http://tools.ampersandjs.com") Find Modules
+        a.nav-item(href="//ampersandjs.com/contribute") Contribute
+        a.nav-item(href="https://github.com/ampersandjs") Github
+        a.nav-item(href="https://twitter.com/ampersandjs") Twitter
+      p Sponsored by
+        a(href="https://andyet.com") &amp;yet
+        br
+        | with the help of our
+        a(href="//ampersandjs.com/contribute") contributors
+      a.logo.logo-ampersand-gray(href="/") &amp;
