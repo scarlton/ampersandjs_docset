@@ -29,7 +29,7 @@ processModules = ->
 
     queryString = ''
     for own module of modules
-      queryString = "#{queryString} INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('#{module}', 'Module', '##{module}');"
+      queryString = "#{queryString} INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('#{module}', 'Module', 'index.html##{module}');"
 
     db.exec queryString, (err) ->
       console.log(err) if err?

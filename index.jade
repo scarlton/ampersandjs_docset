@@ -8,13 +8,16 @@ html(lang="en")
 
   body
 
+    nav.nav-main.cf
+      span.logo.logo-ampersand Ampersand.js
+
     .docs.cf
 
       .docs-content(style= 'padding-left: 0;')
 
         for module, key in globals.modules
-          section.module
-            a.dashAnchor(name= '//apple_ref/cpp/Module/' + module.name, href= '#' + module.name)
+          section.module(id= module.name)
+            a.dashAnchor(name= '//apple_ref/cpp/Module/' + module.name)
               h1
                 span.header-link
                 | #{module.title}

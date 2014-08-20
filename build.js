@@ -48,8 +48,7 @@
       queryString = '';
       for (module in modules) {
         if (!__hasProp.call(modules, module)) continue;
-        console.log("INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('" + module + "', 'Module', '#" + module + "');");
-        queryString = "" + queryString + " INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('" + module + "', 'Module', '#" + module + "');";
+        queryString = "" + queryString + " INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('" + module + "', 'Module', 'index.html#" + module + "');";
       }
       return db.exec(queryString, function(err) {
         if (err != null) {
